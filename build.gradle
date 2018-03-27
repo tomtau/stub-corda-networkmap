@@ -1,0 +1,51 @@
+buildscript {
+    ext {
+        kotlin_version = '1.1.60'
+        dropwizard_version = '1.1.4'
+        corda_version = 'corda-3.0'
+    }
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.github.rholder:gradle-one-jar:1.0.3'
+    }
+}
+
+group 'io.cryptoblk'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'kotlin'
+apply plugin: 'application'
+
+
+sourceCompatibility = 1.8
+
+mainClassName = "io.cryptoblk.networkmap.StubApplicationKt"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    compile "io.dropwizard:dropwizard-core:$dropwizard_version"
+    compile "net.corda:corda-node-api:$corda_version"
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+
+// Configure the run task to start the Dropwizard service
+run {
+    args 'server', './src/main/resources/config/local.yaml'
+}

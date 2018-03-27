@@ -1,0 +1,31 @@
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea
+gradle
+*.iws
+*.iml
+*.ipr
+
+# Mac
+.DS_Store
+
+# Maven
+logs/
+target/
+
+# Gradle
+build/
+.gradle/
+classes/
+.*.swp
+build/
+classes/
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+out/
+gradlew
+gradlew.bat
