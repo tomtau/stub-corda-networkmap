@@ -1,2 +1,9 @@
 name: Stub Corda Network Map
 expiration: 30
+server:
+  applicationConnectors:
+  - type: http
+    port: 8080
+  adminConnectors:
+  - type: http
+    port: 8081

@@ -23,6 +23,8 @@ bin/stub-corda-networkmap server <path to yaml config>
 `expiration` (in seconds) in the yaml config sets the expiration / cache HTTP header
 that's then used by Corda nodes how often they'd query the network map.
 
+Additional server properties can be configured using the standard Dropwizard configuration: http://www.dropwizard.io/1.3.0/docs/manual/configuration.html#http
+
 ## Connecting nodes: adding notary
 Each node that will have `OU=Notary` in its legal name will be automatically added 
 to this test stub network map as a notary. Adding notary nodes changes the network map

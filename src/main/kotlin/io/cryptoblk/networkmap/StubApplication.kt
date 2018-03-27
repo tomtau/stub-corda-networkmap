@@ -37,7 +37,7 @@ class CacheControlFilter(val expiration: Int) : Filter {
     }
 }
 
-class NetworkMapConfig(val name: String = "unknown", val expiration: Int = 30) : Configuration()
+data class NetworkMapConfig(var name: String = "unknown", var expiration: Int = 30) : Configuration()
 
 class StubApplication: Application<NetworkMapConfig>() {
     override fun run(configuration: NetworkMapConfig, environment: Environment) {
