@@ -36,6 +36,6 @@ config (e.g. `compatibilityZoneURL: "http://localhost:8080"`).
 
 2. notary nodes will self-shutdown with an exception: `network.NetworkMapUpdater.updateNetworkMapCache - Node is using parameters with hash: ... but network map is advertising: ...`
 
-3. delete `network-parameters` in the notary nodes directory and run them again
+3. delete `network-parameters` in the notary nodes' directories and run them again
 
 4. run all other nodes with the compatibilityZoneURL in their configs
